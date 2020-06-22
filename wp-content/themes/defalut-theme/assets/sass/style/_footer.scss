@@ -1,0 +1,28 @@
+.footer{
+	@include clear;
+	@include box-sizing;
+	width: 100%;
+	position: relative;
+	padding-bottom: 30px;
+
+	.container {
+		padding: 0 16.666%;
+	}
+
+	h3 {
+		color: $cor3;
+	}
+
+	.ico-satisfacao {
+		text-align: right;
+
+		a {
+			margin: 0 5px;
+			display: inline-block;
+
+			&:hover {
+				opacity: .75;
+			}
+		}
+	}
+}
