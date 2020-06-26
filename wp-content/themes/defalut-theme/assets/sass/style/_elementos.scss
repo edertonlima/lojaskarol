@@ -7,30 +7,26 @@ strong, .bold {
 }
 
 .logo {
-	float: left;
-	width: 250px;
-	height: 47px;
+	margin: 20px 0px;
+	display: block;
+	width: 100%;
 	
 	a {
+		width: 200px;
+		margin: 0 auto;
 		display: block;
 		position: relative;
 
-		span {
-			position: absolute;
+		img {
+			width: 100%;
 			display: block;
-			@include animacao-slow;
-
-			img {
-				width: 100%;
-				display: block;
-			}
 		}
 	}
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $font-titulo;
-	font-weight: $regular;
+	font-family: $font;
+	font-weight: $medium;
 	display: block;
 }
 
@@ -41,23 +37,24 @@ h1 {
 }
 
 h2, h2 strong {
-	font-size: 2.625rem;
-	line-height: 3.0625rem;
-	color: $cor1;
-	margin-bottom: 15px;
+	font-size: 1.875rem;
+	line-height: 2.275rem;
+
+	&.mais-post {
+		font-family: $font-titulo;
+		color: $cor1;
+	}
 }
 
 h3, h3 strong {
-	color: $cor1;
-	font-size: 2rem;
-	line-height: 2.5rem;
+	font-size: 1.5rem;
+	line-height: 1.75rem;
 }
 
 h4 {
-	font-size: 1.5rem;
-	line-height: 1.75rem;
-	font-weight: $medium;
-	color: $cor3;
+	font-family: $font-titulo;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
 }
 
 h5 {
@@ -214,6 +211,24 @@ a, button, .btn-in {
 	&.underline {
 		&:hover {
 			text-decoration: underline;
+		}
+	}
+
+	&.carregar-mais {
+		width: 150px;
+		margin: 60px auto 0;
+		display: block;
+		color: $cor-txt;
+		font-size: .85rem;
+		padding: 10px 20px;
+		border: 1px solid #e0e0e0;
+		font-family: $font-titulo;
+		background: transparent;
+		@include animacao-slow;
+
+		&:hover {
+			background-color: #e0e0e0;
+			color: $cor1;
 		}
 	}
 }

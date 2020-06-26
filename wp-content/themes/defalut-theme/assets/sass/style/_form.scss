@@ -2,8 +2,7 @@ $height_input: 30px;
 
 form {
 	margin: 0 auto;
-	padding: 0 100px;
-	max-width: 840px;
+	padding: 0px;
 	width: 100%;
 	@include box-sizing;
 	@include clear();
@@ -17,7 +16,7 @@ form {
 		font-weight: $light;
 		line-height: $height_input;
 		background-color: transparent;
-		padding: 0px;
+		padding: 0px 10px;
 		font-style: normal;
 		border-bottom: 1px solid $cor-txt;
 		@include animacao;
@@ -79,9 +78,20 @@ form {
 		}
 	}
 
-	&.contato, &.demonstracao {
-		padding: 0 110px;
-		margin: 30px 0 0;
+	&.busca {
+		max-width: 120px;
+		position: relative;
+
+		i {
+			position: absolute;
+			left: 0px;
+			top: 9px;
+		}
+
+		input {
+			font-size: .75rem;
+			padding-left: 25px;
+		}
 	}
 }
 

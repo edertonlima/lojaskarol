@@ -101,23 +101,16 @@ body * {
 		}
 	}
 
+	&.no-padding-top {
+		padding-top: 0px;
+	}
+
 	.conteudo {
 		//width: 100%;
 		max-width: 780px;
-		padding: 15px 0 15px 55px;
-		margin: 0px 0 0 55px;
-		border-left: 1px solid $cor-txt;
-		display: block;
-		text-align: justify;
-		overflow-wrap: break-word;
-		word-wrap: break-word;
-		-webkit-hyphens: auto;
-		-ms-hyphens: auto;
-		hyphens: auto;
-		hyphenate-limit-chars: 10 4 4;		
-		-webkit-hyphenate-limit-chars: 10 4 4;
-		-ms-hyphenate-limit-chars: 10 4 4;
-		
+		padding: 0 0 15px 0;
+		margin: 0px;
+		display: block;		
 		@include box-sizing;
 
 		ul {
@@ -138,9 +131,8 @@ body * {
 
 		blockquote {
 			background: #fff;
-			margin-left: -56px;
-			padding: 55px 0 55px 56px;
-			margin-top: -20px;
+			margin-left: 0px;
+			padding: 55px 0;
 
 			p {
 				font-family: $font-titulo;

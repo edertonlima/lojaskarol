@@ -1,27 +1,28 @@
 .nav {
-	float: right;
-	margin-top: 18px;
-	//padding-left: 60px;
+	display: block;
+	border-top: 1px solid #e0e0e0;
 	@include animacao-slow;
 
 	ul {
-		display: table-cell;
+		width: 100%;
+		display: table;
+		text-align: center;
 		@include box-sizing; 
 
 		li {
 			display: table-cell;
-			line-height: 30px;
 			padding: 0px 10px;
 			text-align: center;
 		}
 	}
 
 	a {
-		font-size: .8rem;
-		line-height: 1.125rem;
+		line-height: 50px;
+		display: block;
+		font-family: $font-titulo;
+		font-size: 1rem;
 		color: $cor-txt;
-		font-weight: $light;
-		padding: 0px 5px;
+		font-weight: $medium;
 		text-transform: uppercase;
 		@include animacao-slow;
 
@@ -32,10 +33,10 @@
 		}
 
 		&:hover, &.ativo {
-			//color: $cor1;
+			color: $cor2;
 
 			i {
-				//color: $cor1;
+				color: $cor2;
 			}
 		}
 	}
@@ -58,15 +59,15 @@
 
 // MENU MOBILE
 .menu-mobile {
+	margin-right: 10px;
 	display: none;
-	position: fixed;
+	//position: fixed;
 	right: 47px;
-	margin: 0;
 	top: 27px;
 	@include clear;
 
 	&.open {
-		display: table;
+		//display: table;
 	}
 }
 
@@ -104,30 +105,19 @@
 		transition: .25s ease-in-out;
 	}
 
-	&.open {
+	&.active-open {
+		position: absolute;
+		top: 40px;
+		right: 40px;
+		z-index: 999;
+
 		span {
 			background: #ffffff;
 		}
-	}
-}
 
-.home, .single-servicos, .single-post, .page {
-	#nav-icon2 span {
-		background: #ffffff;
-	}
-}
-
-.header {
-	&.scroll, &.scroll-fixed {
-		#nav-icon2 {
+		&.open {
 			span {
-				background: $cor1;
-			}
-
-			&.open {
-				span {
-					background: #ffffff;
-				}
+				background: #ffffff;
 			}
 		}
 	}

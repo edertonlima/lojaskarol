@@ -40,13 +40,13 @@ jQuery(document).ready(function($) {
 				}
 
 				$('.row-load-more').append(loopHTML);
-				$('.projetos .article').height(proj_height);
+				//$('.projetos .article').height(proj_height);
 				$('.load-more').html('mais');
 
-				if(post_type == 'post'){
+				/*if(post_type == 'post'){
 					proj_height = $('.blog .col-4:first-child').width();
 					$('.blog .article').height(proj_height);
-				}
+				}*/
 			},
 			
 			error: function(){

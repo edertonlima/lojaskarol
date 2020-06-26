@@ -54,51 +54,9 @@
 <script type="text/javascript">
 	//jQuery.noConflict();
 
-	/*jQuery(document).ready(function(){
 
-		jQuery('.menu-mobile').click(function(){
-			if(jQuery(this).hasClass('active')){
-				jQuery('.nav').css('top','-100vh');
-				jQuery(this).removeClass('active');
-				jQuery('.header').removeClass('active');
-			}else{
-				jQuery('.nav').css('top','0px');
-				jQuery(this).addClass('active');
-				jQuery('.header').addClass('active');
-			}
-		});
 
-		if(jQuery('body').height() <= jQuery(window).height()){
-			jQuery('.footer').css({position: 'absolute', bottom: '0px'});
-		}else{
-			jQuery('.footer').css({position: 'relative'});
-		}
 
-		scroll_body = jQuery(window).scrollTop();
-		if(scroll_body > 400){
-			jQuery('.header').addClass('scroll_menu');
-		}
-	});	
-
-	jQuery(window).resize(function(){
-		jQuery('.menu-mobile').removeClass('active');
-		jQuery('.header').removeClass('active');
-		jQuery('.nav').css('top','-100vh');
-		if(jQuery('body').height() <= jQuery(window).height()){
-			jQuery('.footer').css({position: 'absolute', bottom: '0px'});
-		}else{
-			jQuery('.footer').css({position: 'relative'});
-		}
-	});
-
-	jQuery(window).scroll(function(){
-		scroll_body = jQuery(window).scrollTop();
-		if(scroll_body > 400){
-			jQuery('.header').addClass('scroll_menu');
-		}else{
-			jQuery('.header').removeClass('scroll_menu');
-		}
-	});*/
 </script>
 
 <?php wp_head(); ?> 
@@ -106,8 +64,47 @@
 </head>
 <body <?php body_class(); ?>>
 
-	<header class="header <?php echo $classHeader; ?>">
-		<div class="container">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v7.0&appId=1806184732950369&autoLogAppEvents=1" nonce="UM77Ire4"></script>
 
+	<header class="header <?php //echo $classHeader; ?>">
+		<div class="top-header">
+			<div class="container">
+
+				<form action="" class="busca">
+					<i class="fas fa-search"></i>
+					<input type="search" name="s" placeholder="pesquisar...">
+				</form>
+
+				<div class="social">
+					<ul>
+						<li><a href="https://web.whatsapp.com/send?phone=+5531995292590" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+						<li><a href="https://www.facebook.com/lojakarol/"><i class="fab fa-facebook-f" target="_blank"></i></a></li>
+						<li><a href="https://www.instagram.com/lojaskarol/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+					</ul>
+				</div>
+
+			</div>	
 		</div>
+
+		
+		<div class="menu-scroll">
+			<div class="logo">
+				<a href="<?php echo get_home_url(); ?>" title="home">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-cabecalho.jpg" alt="">
+				</a>
+
+				<div class="menu-mobile" id="nav-icon2">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>		
+
+			<?php get_template_part( 'nav' ); ?>
+		</div>
+
 	</header>

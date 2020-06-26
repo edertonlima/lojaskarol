@@ -1,3 +1,58 @@
 .header {
+	height: 210px;
+	@include animacao;
 
+	.menu-scroll {
+		top:-105px;
+		background: #fff;
+		@include animacao-slow;
+	}
+
+	.top-header {
+		padding: 10px 0;
+		border-bottom: 1px solid #e0e0e0;
+	}
+
+	.busca {
+		float: left;
+	}
+
+	.social {
+		float: right;
+		margin-top: 8px;
+
+		ul {
+			display: block;
+
+			li {
+				display: inline-block;
+
+				a {
+					padding: 0 5px;
+					display: block;
+
+					i {
+						font-size: 1.25rem;
+					}
+
+					&:hover {
+						i {
+							color: $cor2;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.scroll {
+	.menu-scroll {
+		position: fixed;
+		top: 0;
+		left: 0;		
+		width: 100%;
+		z-index: 999;
+	}
 }
