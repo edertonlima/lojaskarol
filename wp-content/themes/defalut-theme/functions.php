@@ -17,6 +17,27 @@ function register_menu() {
 }
 
 
+// PAGINA DE OPÇÕES
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+	  'page_title'  => 'Configurações Gerais',
+	  'menu_title'  => 'Configurações Gerais',
+	  'menu_slug'   => 'configuracoes',
+	  'capability'  => 'edit_posts',
+	  'redirect'    => true
+	));
+
+	acf_add_options_sub_page(array(
+	  'page_title'  => 'Geral',
+	  'menu_title'  => 'Geral',
+	  'parent_slug' => 'configuracoes',
+	));
+
+}
+
+
+
 
 add_action( 'wp_enqueue_scripts', 'meus_scripts', 100 );
 

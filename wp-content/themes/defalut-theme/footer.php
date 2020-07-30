@@ -1,4 +1,8 @@
-		<?php echo do_shortcode( '[wp_my_instagram username="lojaskarol" limit="24" layout="6" size="large" link=""]' ); ?>
+		<?php 
+			if(get_field('usuario_instagram','option')){
+				echo do_shortcode( '[wp_my_instagram username="' . get_field('usuario_instagram','option') . '" limit="24" layout="6" size="large" link=""]' );
+			}
+		?>
 
 		
 		<footer class="footer">
@@ -8,13 +12,23 @@
 					<div class="col-12">
 						<div class="social">
 							<ul>
-								<li><a href="https://web.whatsapp.com/send?phone=+5531995292590" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-								<li><a href="https://www.facebook.com/lojakarol/"><i class="fab fa-facebook-f" target="_blank"></i></a></li>
-								<li><a href="https://www.instagram.com/lojaskarol/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+								<?php if(get_field('whatsapp','option')){ ?>
+									<li><a href="https://web.whatsapp.com/send?phone=<?php the_field('whatsapp','option'); ?>" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+								<?php } ?>
+
+								<?php if(get_field('usuario_facebook','option')){ ?>
+									<li><a href="https://www.facebook.com/<?php the_field('usuario_facebook','option'); ?>" target="_blank"><i class="fab fa-facebook-f" target="_blank"></i></a></li>
+								<?php } ?>
+								
+								<?php if(get_field('usuario_instagram','option')){ ?>
+									<li><a href="https://www.instagram.com/<?php the_field('usuario_instagram','option'); ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
+								<?php } ?>
 							</ul>
 						</div>
 						
-						<p class="copy">Lojas Karol | Rua Lavras, 90 - São Pedro - Belo Horizonte/MG | CEP: 30140-128 | CNPJ: 17.721.215/0001-02 - Todos os direitos reservados</p>
+						<?php if(get_field('texto-rodape','option')){
+							echo '<p class="copy">' . get_field('texto-rodape','option') . '</p>';
+						} ?>
 					</div>
 				</div>
 
